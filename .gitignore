@@ -1,0 +1,29 @@
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Python Bytecode & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Raw Data (Keep processed data & output figures tracked)
+data/raw/*.csv
+data/raw/*.xlsx
+
+# Environment Variables & Secrets
+.env
+.env.local
+
+# IDE & OS Specific Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
