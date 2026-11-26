@@ -30,11 +30,11 @@ This project investigates the statistical relationship between daily social medi
 
 | Usage Tiers & Distress Distribution | Multivariate Odds Ratios (Forest Plot) |
 | :---: | :---: |
-| ![Wellbeing by Usage Tier](notebooks/reports/figures/03_wellbeing_by_usage_tier.png) | ![Odds Ratios Forest Plot]notebooks/reports/figures/06_odds_ratios_forest_plot.png) |
+| ![Wellbeing by Usage Tier](reports/figures/03_wellbeing_by_usage_tier.png) | ![Odds Ratios Forest Plot](reports/figures/06_odds_ratios_forest_plot.png) |
 
 | Spearman Correlation Matrix | Distress by Occupation Status |
 | :---: | :---: |
-| ![Correlation Heatmap](notebooks/reports/figures/02_correlation_heatmap.png) | ![Distress by Occupation](notebooks/reports/figures/05_distress_by_occupation.png) |
+| ![Correlation Heatmap](reports/figures/02_correlation_heatmap.png) | ![Distress by Occupation](reports/figures/05_distress_by_occupation.png) |
 
 *(Note: If your `output/` folder is in the root directory rather than `notebooks/output/`, remove `notebooks/` from the image paths above.)*
 
