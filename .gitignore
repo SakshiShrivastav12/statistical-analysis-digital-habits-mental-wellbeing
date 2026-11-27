@@ -27,3 +27,4 @@ data/raw/*.xlsx
 .idea/
 .DS_Store
 Thumbs.db
+git

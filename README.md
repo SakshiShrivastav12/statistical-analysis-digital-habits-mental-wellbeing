@@ -5,6 +5,32 @@ This project investigates the statistical relationship between daily social medi
 
 ---
 
+
+## 🎯 Problem Statement
+Public discourse around digital wellbeing often reduces mental health risks to a single metric: **total daily screen time**. However, treating all screen exposure as equal overlooks *how* individuals interact with digital platforms. 
+
+This study addresses two core questions using survey data (`N = 481` respondents):
+1. Does raw daily social media duration independently drive mental distress, or do **psychological engagement patterns** (upward social comparison, restlessness, purposeless scrolling) explain the relationship?
+2. Which demographic segments face the highest vulnerability to digital-related distress?
+
+---
+
+## 💡 How We Solved It (Analytical Workflow)
+1. **Psychometric Scale Engineering (`01_data_cleaning.ipynb`):** Standardized 21 survey items, converted categorical usage intervals into numeric midpoint hours (`daily_screen_time`), and constructed a 5-item composite **Mental Distress Index** (`5–25` scale, validated via **Cronbach's α**).
+2. **Non-Parametric Assumption Testing (`02_exploratory_analysis.ipynb`):** Audited skewness via Q-Q plots and Shapiro-Wilk tests, selecting rank-based **Spearman correlations (ρ)** and **Kruskal-Wallis H-tests** with Bonferroni post-hoc corrections.
+3. **Multivariable Risk Modeling (`03` & `04` Notebooks):** Isolated independent behavioral predictors using **HC3 robust OLS regression** and **Binomial Logistic Regression** to estimate **Adjusted Odds Ratios (OR)** with 95% confidence intervals.
+
+---
+
+## 🔎 Key Observations
+* **Non-Linear Jump Across Usage Tiers:** Median mental distress rises sharply from **13.0** (`Low <2h/day`) to **18.0** (`Moderate 2–5h/day`), with a smaller incremental rise to **19.0** (`High >5h/day`).
+* **The "Behavior Over Hours" Inversion:** While bivariate trend lines show distress rising with screen time, controlling for behavioral habits in multivariable logistic regression renders raw `daily_screen_time` statistically non-significant (**Adjusted OR = 1.16**, 95% CI crosses `1.0`).
+* **Primary Psychological Drivers:** **Upward social comparison** (**OR ≈ 1.75**, 95% CI: 1.49–2.07), **restlessness** (**OR ≈ 1.43**), and **purposeless scrolling** (**OR ≈ 1.41**) remain highly significant independent predictors of elevated distress.
+* **Demographic Vulnerability:** **University Students** report the highest median distress (**18.0**), followed by **School Students** (**16.0**) and **Salaried Workers** (**14.0**), with older age acting as a modest protective factor (**OR ≈ 0.95**/year).
+
+
+---
+
 ## 🔍 Key Statistical Findings
 
 1. **Behavior Matters More Than Raw Screen Hours:**
@@ -36,9 +62,22 @@ This project investigates the statistical relationship between daily social medi
 | :---: | :---: |
 | ![Correlation Heatmap](reports/figures/02_correlation_heatmap.png) | ![Distress by Occupation](reports/figures/05_distress_by_occupation.png) |
 
-*(Note: If your `output/` folder is in the root directory rather than `notebooks/output/`, remove `notebooks/` from the image paths above.)*
+---
+
+
+## ✅ Conclusions & Practical Implications
+* **Screen-Time Limits Alone Are Insufficient:** Digital wellbeing interventions and app-level nudges focused strictly on reducing total screen hours miss the primary psychological mechanism—**passive, comparison-driven consumption**.
+* **Targeted Campus Support:** Because university students experience significantly higher distress scores than working adults, institutional mental health programs should prioritize healthy digital literacy and active-vs-passive usage awareness among college cohorts.
 
 ---
+
+## 🚀 Future Scope & Limitations
+* **Cross-Sectional & Self-Report Bias:** Because survey responses are self-reported at a single point in time, causal direction cannot be definitively established (e.g., preexisting anxiety may drive higher social media escapism).
+* **Objective Telemetry Integration:** Future iterations can pair longitudinal digital-wellbeing logs (objective screen-time APIs and notification frequency) with validated clinical scales (PHQ-9 / GAD-7) to test causal lagged effects.
+
+
+---
+
 
 ## 📂 Repository Structure
 
